@@ -1,5 +1,5 @@
 {
-  "name": "n-colours",
+  "name": "n",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "connect-ensure-login": "^0.1.1",
@@ -23,9 +24,17 @@
     "node-sass-middleware": "^0.11.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "spotify-web-api-node": "^4.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  }
+  },
+  "main": "app.js",
+  "bin": {
+    "n": "seeds.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
