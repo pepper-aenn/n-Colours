@@ -43,7 +43,7 @@ setTimeout(() => {
 
       spotifyApi.getAudioAnalysisForTrack("" + trackId + "").then(data2 => {
         // for (var j = 0; j < arrayLength; j++) {
-        console.log("key of our chosen song", data2.body.track.key);
+        //console.log("key of our chosen song", data2.body.track.key);
         switch (data2.body.track.key) {
           case 0:
             console.log("0,100,90");
@@ -89,16 +89,58 @@ setTimeout(() => {
       });
 
       spotifyApi.getAudioAnalysisForTrack("" + trackId + "").then(data2 => {
-        console.log(
-          "loudness of the song",
-          Math.floor(data2.body.track.loudness)
-        );
-        switch (data2.body.track.loudness) {
+        // console.log(
+        //   "loudness of the song",
+        //   Math.floor(data2.body.track.loudness)
+        // );
+        if (
+          (data2.body.track.key === 0 && data2.body.track.loudness === -1) ||
+          data2.body.track.loudness === 0
+        ) {
+          ("red and bright: 0,100,90");
+        } else if (
+          data2.body.track.key === 0 &&
+          data2.body.track.loudness === -2
+        ) {
+          ("red and less bright: 0,100,82");
+        } else if (
+          data2.body.track.key === 0 &&
+          data2.body.track.loudness === -3
+        ) {
+          ("red and even less bright: 0,100,74");
+        }
+
+        switch (Math.floor(data2.body.track.loudness)) {
           case -1:
             console.log("0,10,90");
             break;
           case -2:
-            console.log("0,10,90");
+            console.log("0,10,82");
+            break;
+          case -3:
+            console.log("0,10,74");
+            break;
+
+          case -4:
+            console.log("0,10,66");
+            break;
+          case -5:
+            console.log("0,10,58");
+            break;
+          case -6:
+            console.log("0,10,50");
+            break;
+          case -7:
+            console.log("0,10,42");
+            break;
+          case -8:
+            console.log("0,10,34");
+            break;
+          case -9:
+            console.log("0,10,26");
+            break;
+          case -10:
+            console.log("0,10,18");
             break;
         }
       }, 400);
