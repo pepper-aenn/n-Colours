@@ -90,4 +90,7 @@ app.get('/myArt', myArt);
 const generatedArt = require('./routes/index');
 app.get('/generatedArt', generatedArt);
 
+const about = require('./routes/index');
+app.get('/about', about);
+
 module.exports = app;

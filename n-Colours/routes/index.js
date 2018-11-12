@@ -19,4 +19,8 @@ router.get('/generatedArt', (req, res, next) => {
   res.render('generatedArt');
 });
 
+router.get('/about', (req, res, next) => {
+  res.render('about');
+});
+
 module.exports = router;
