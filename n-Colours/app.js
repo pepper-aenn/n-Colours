@@ -66,12 +66,7 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 });
 
 // default value for title local
-<<<<<<< HEAD
-app.locals.title = 'n-Colours';
-
-=======
-app.locals.title = "Express - Generated with IronGenerator";
->>>>>>> 15965665d58d49c6075687131c46ac8176393348
+app.locals.title = "n-Colours";
 
 // Enable authentication using session + passport
 app.use(
@@ -91,30 +86,22 @@ app.use("/", index);
 const authRoutes = require("./routes/auth");
 app.use("/auth", authRoutes);
 
-<<<<<<< HEAD
-const login = require('./routes/auth');
-app.use('/', login);
+const login = require("./routes/auth");
+app.use("/", login);
 
-const authRoutes = require('./routes/auth');
-app.use('/auth', authRoutes);
+const authRoutes = require("./routes/auth");
+app.use("/auth", authRoutes);
 
-const dashboard = require('./routes/index');
-app.get('/dashboard', dashboard);
+const dashboard = require("./routes/index");
+app.get("/dashboard", dashboard);
 
-const myArt = require('./routes/index');
-app.get('/myArt', myArt);
+const myArt = require("./routes/index");
+app.get("/myArt", myArt);
 
-const generatedArt = require('./routes/index');
-app.get('/generatedArt', generatedArt);
+const generatedArt = require("./routes/index");
+app.get("/generatedArt", generatedArt);
 
-const about = require('./routes/index');
-app.get('/about', about);
-=======
-const generate = require("./routes/generate");
-app.use("/", generate);
-
-const server = require("./routes/server");
-app.use("/", server);
->>>>>>> 15965665d58d49c6075687131c46ac8176393348
+const about = require("./routes/index");
+app.get("/about", about);
 
 module.exports = app;
