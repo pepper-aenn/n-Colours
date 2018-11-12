@@ -1,7 +1,10 @@
 
-<h2>Login</h2>
+<p>n-Colours</p>
 
-<form action="/auth/login" method="POST" id="form-container">
+
+<p>LogIn</p>
+
+<form action="/" method="POST" id="form-container">
   <label for="username">Username</label>
   <input id="username" type="text" name="username" placeholder="JonSnow">
 
@@ -9,6 +12,8 @@
 
   <label for="password">Password</label>
   <input id="password" type="password" name="password" placeholder="Your password">
+
+
   <br>
   {{#if message }}
     <div class="error-message">{{ message }}</div>
@@ -16,10 +21,10 @@
 
   <br><br>
 
-  <button>Login</button>
+  <button type="submit">LogIn</button>
 
   <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/signup">Signup</a>
+    No account yet?
+    <a href="/auth/signup">SignUp.</a>
   </p>
 </form>
