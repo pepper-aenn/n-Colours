@@ -3,18 +3,19 @@ const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
 
+
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 
-router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+router.get("/", (req, res, next) => {
+  res.render("./auth/login", { "message": req.flash("error") });
 });
 
-router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
+router.post("/", passport.authenticate("local", {
+  successRedirect: "dashboard",
+  failureRedirect: "/",
   failureFlash: true,
   passReqToCallback: true
 }));
@@ -26,6 +27,7 @@ router.get("/signup", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.email;
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
@@ -42,7 +44,8 @@ router.post("/signup", (req, res, next) => {
 
     const newUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      email,
     });
 
     newUser.save()
@@ -58,6 +61,10 @@ router.post("/signup", (req, res, next) => {
 router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
+});
+
+router.post("/dashboard", (req, res,next) => {
+  res.redirect("/generatedArt");
 });
 
 module.exports = router;
