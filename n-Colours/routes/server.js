@@ -1,6 +1,8 @@
 /* Load the HTTP library */
 var http = require("http");
+const express = require("express");
 
+const router = express.Router();
 /* Create an HTTP server to handle responses */
 
 http
@@ -10,3 +12,5 @@ http
     response.end();
   })
   .listen(8888);
+
+module.exports = router;

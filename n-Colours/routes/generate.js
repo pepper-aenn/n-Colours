@@ -21,14 +21,22 @@ spotifyApi.clientCredentialsGrant().then(
   }
 );
 
+const URL =
+  "https://open.spotify.com/user/annaundco.kg/playlist/1RGBEfsPYpCnvRI8S7dgsi?si=kBmkKrB-QJmF9CXlbQl7DQ";
+var sub = URL.substr(52, 22);
+const urlOfId = "" + sub + "";
+
+console.log("SUBSTRING", sub);
+console.log("URLOFID", urlOfId);
+
 let trackId = "";
 let arrayLength = 0;
 setTimeout(() => {
-  spotifyApi.getPlaylistTracks("1RGBEfsPYpCnvRI8S7dgsi").then(data => {
+  spotifyApi.getPlaylistTracks("" + sub + "").then(data => {
     arrayLength = data.body.items.length;
     console.log("array length", arrayLength);
 
-    for (var i = 0; i < data.body.items.length; i++) {
+    for (var i = 0; i < arrayLength; i++) {
       console.log("Daten von Spotify", data.body.items[i].track.id);
       trackId = data.body.items[i].track.id;
       // console.log("gespeichert in einer Variable", trackId);
@@ -212,3 +220,5 @@ setTimeout(() => {
 //     console.log(data.body.track.key);
 //   });
 // }, 200);
+
+module.exports = router;
