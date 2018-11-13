@@ -8,35 +8,35 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 router.get("/", (req, res, next) => {
-  res.render("./auth/login", { message: req.flash("error") });
+  res.render("auth/login");
 });
 
 router.post(
   "/",
   passport.authenticate("local", {
-    successRedirect: "dashboard",
+    successRedirect: "/dashboard",
     failureRedirect: "/",
     failureFlash: true,
     passReqToCallback: true
   })
 );
 
-router.get("/signup", (req, res, next) => {
+router.get("/auth/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", (req, res, next) => {
+router.post("/auth/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
   if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+    res.render("/auth/signup", { message: "Indicate username and password" });
     return;
   }
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
+      res.render("/signup", { message: "The username already exists" });
       return;
     }
 
@@ -55,18 +55,18 @@ router.post("/signup", (req, res, next) => {
         res.redirect("/");
       })
       .catch(err => {
-        res.render("auth/signup", { message: "Something went wrong" });
+        res.render("/auth/signup", { message: "Something went wrong" });
       });
   });
 });
 
-router.get("/logout", (req, res) => {
+router.get("/auth/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });
 
-router.post("/dashboard", (req, res, next) => {
-  res.redirect("/generatedArt");
+router.post("/auth/dashboard", (req, res, next) => {
+  res.redirect("/auth/generatedArt");
 });
 
 module.exports = router;

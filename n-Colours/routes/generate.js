@@ -12,6 +12,7 @@ const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 
 // Remember to paste your credentials here
+ 
 var spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET
@@ -66,6 +67,8 @@ router.post("/dashboard", (req, res, next) => {
   let URL = req.body.PlaylistID;
   var h = URL.split("/")[6];
   var sub = h.substr(0, 22);
+  console.log("hello")
+
   // let urlOfId = sub + "";
   console.log("mierrrrrrr", URL);
 
