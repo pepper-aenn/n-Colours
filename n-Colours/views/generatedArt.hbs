@@ -1,20 +1,19 @@
 <p>Your playlist as Art</p>
 
-{{colors}}
-<br>
 
-{{!-- {{#each}} --}}
 
 <div class="picture">
-  <div class="square" style="background-color: hsl(120, 100%, 74%)"></div>
-  <div class="square" style="background-color: hsl(60, 100%, 42%)"></div>
-  <div class="square" style="background-color: hsl(0, 100%, 50%)"></div>
-  <div class="square" style="background-color: hsl(30, 100%, 74%)"></div>
-  <div class="square" style="background-color: hsl(210, 100%, 50%)"></div>
+
+  {{#each colors}}
+  <div class="square" style="background-color: {{this}}"></div>
+
+  {{/each}}
 
 </div>
 
-{{!-- {{/each}} --}}
+<br>
+<br>
 
+<a href="/dashboard">Go Back!</a>
 
-<canvas id="myCanvas" width="600" height="600" color="black"></canvas>
+<a href="/myArt">Save!</a>

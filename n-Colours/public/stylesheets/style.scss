@@ -53,11 +53,24 @@ a {
 
 .picture {
   display: flex;
-  width: 800px;
-  align-content: space-between;
+  // width: 800px;
+  align-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .square {
   height: 100px;
   width: 100px;
+
+  // display: inline;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+  padding: 10px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 5px;
 }
