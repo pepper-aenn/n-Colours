@@ -21,16 +21,16 @@ router.post(
   })
 );
 
-router.get("/signup", (req, res, next) => {
+router.get("/auth/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", (req, res, next) => {
+router.post("/auth/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
   if (username === "" || password === "") {
-    res.render("/signup", { message: "Indicate username and password" });
+    res.render("/auth/signup", { message: "Indicate username and password" });
     return;
   }
 
@@ -55,18 +55,18 @@ router.post("/signup", (req, res, next) => {
         res.redirect("/");
       })
       .catch(err => {
-        res.render("/signup", { message: "Something went wrong" });
+        res.render("/auth/signup", { message: "Something went wrong" });
       });
   });
 });
 
-router.get("/logout", (req, res) => {
+router.get("/auth/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });
 
-router.post("/dashboard", (req, res, next) => {
-  res.redirect("/generatedArt");
+router.post("/auth/dashboard", (req, res, next) => {
+  res.redirect("/auth/generatedArt");
 });
 
 module.exports = router;
