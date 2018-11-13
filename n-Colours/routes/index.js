@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
-// const app = require("../app");
+const app = require("../app");
+
+/* GET home page */
+router.get("/", (req, res, next) => {
+  res.render("login");
+});
 
 router.get("/dashboard", (req, res, next) => {
   res.render("dashboard");

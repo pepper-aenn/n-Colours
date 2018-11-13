@@ -6,6 +6,10 @@ const router = express.Router();
 
 const SpotifyWebApi = require("spotify-web-api-node");
 const Playlist = require("../models/Playlist");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const flash = require("connect-flash");
 
 // Remember to paste your credentials here
 var spotifyApi = new SpotifyWebApi({
@@ -23,201 +27,99 @@ spotifyApi.clientCredentialsGrant().then(
 );
 
 //working with the manually entered playlistID
-const URL =
-  "https://open.spotify.com/user/annaundco.kg/playlist/1RGBEfsPYpCnvRI8S7dgsi?si=kBmkKrB-QJmF9CXlbQl7DQ";
+// const URL =
+//   "https://open.spotify.com/user/annaundco.kg/playlist/1RGBEfsPYpCnvRI8S7dgsi?si=kBmkKrB-QJmF9CXlbQl7DQ";
 
-var h = URL.split("/")[6];
-var sub = h.substr(0, 22);
-const urlOfId = "" + sub + "";
-
-console.log("maybe the 6th position of /, who knows:", h);
-
-console.log("SUBSTRING", sub);
-console.log("URLOFID", urlOfId);
+// let url = "";
 
 //trying to work with the given playlistID
 router.get("/dashboard", (req, res, next) => {
   res.render("/dashboard");
 });
 
-router.post("/dashboard", (req, res, next) => {
-  const playlist_url = req.body.Playlist - ID;
-  console.log(playlist_url);
+console.log("HEY!!!!!!!!!!!!!!!!!!!!!!!");
 
-  if (playlist_url === "") {
-    res.render({ message: "Indicate Playlist URL" });
-    return;
-  }
+// router.post("/dashboard", (req, res, next) => {
+//   console.log("--------------------------------------------------");
 
-  const newPlaylist = new Playlist({
-    playlist_url
-  });
+//   const playlist_url = req.body.PlaylistID;
+//   url = req.body.PlaylistID;
 
-  newPlaylist
-    .save()
-    .then(() => {
-      res.redirect("/generatedArt");
-    })
-    .catch(err => {
-      res.render("/dashboard", { message: "Something went wrong" });
-    });
-});
+//   console.log("playlist_url", playlist_url);
+//   console.log("I am the URL", url);
+
+//   if (playlist_url === "") {
+//     res.render({ message: "Indicate Playlist URL" });
+//     return;
+//   }
+
+//   const newPlaylist = new Playlist({
+//     playlist_url
+//   });
+
+//   newPlaylist
+//     .save()
+//     .then(() => {
+//       console.log("SAVED");
+
+//       res.redirect("/generatedArt");
+//     })
+//     .catch(err => {
+//       res.render("/dashboard", { message: "Something went wrong" });
+//     });
+// });
+
+// var h = URL.split("/")[6];
+// var sub = h.substr(0, 22);
+// let urlOfId = "" + sub + "";
+
+// console.log("maybe the 6th position of /, who knows:", h);
+// console.log("SUBSTRING", sub);
+// console.log("URLOFID", urlOfId);
 
 //defining the colors
-let color1;
-let color2 = 100;
-let color3;
 
-let trackId = "";
-let arrayLength = 0;
+//getting the url from the form and change it
 
-setTimeout(() => {
+router.post("/dashboard", (req, res, next) => {
+  // const playlist_url = req.body.PlaylistID;
+  let URL = req.body.PlaylistID;
+  var h = URL.split("/")[6];
+  var sub = h.substr(0, 22);
+  let urlOfId = sub + "";
+
+  console.log("maybe the 6th position of /, who knows:", h);
+  console.log("SUBSTRING", sub);
+  console.log("URLOFID", urlOfId);
+
+  let trackId = "";
+  let arrayLength = 0;
+
   spotifyApi.getPlaylistTracks("" + sub + "").then(data => {
     arrayLength = data.body.items.length;
     console.log("array length", arrayLength);
+
+    let promises = [];
 
     for (var i = 0; i < arrayLength; i++) {
       console.log("Daten von Spotify", data.body.items[i].track.id);
       trackId = data.body.items[i].track.id;
       // console.log("gespeichert in einer Variable", trackId);
-
-      spotifyApi.getAudioAnalysisForTrack("" + trackId + "").then(data2 => {
-        // for (var j = 0; j < arrayLength; j++) {
-        //console.log("key of our chosen song", data2.body.track.key);
-        switch (data2.body.track.key) {
-          case 0:
-            color1 = 0;
-            console.log("color 1", color1);
-            break;
-          case 1:
-            color1 = 30;
-            console.log("color 1", color1);
-            break;
-          case 2:
-            color1 = 60;
-            console.log("color 1", color1);
-            break;
-          case 3:
-            color1 = 90;
-            console.log("color 1", color1);
-            break;
-          case 4:
-            color1 = 120;
-            console.log("color 1", color1);
-            break;
-          case 5:
-            color1 = 150;
-            console.log("color 1", color1);
-            break;
-          case 6:
-            color1 = 180;
-            console.log("color 1", color1);
-            break;
-          case 7:
-            color1 = 210;
-            console.log("color 1", color1);
-            break;
-          case 8:
-            color1 = 240;
-            console.log("color 1", color1);
-            break;
-          case 9:
-            color1 = 270;
-            console.log("color 1", color1);
-            break;
-          case 10:
-            color1 = 300;
-            console.log("color 1", color1);
-            break;
-          case 11:
-            color1 = 330;
-            console.log("color 1", color1);
-            break;
-          case 12:
-            color1 = 360;
-            console.log("color 1", color1);
-            break;
-        }
-
-        // console.log("COLORS with color 2 is", colors);
-        // }
-      });
-
-      spotifyApi.getAudioAnalysisForTrack("" + trackId + "").then(
-        data2 => {
-          // console.log(
-          //   "loudness of the song",
-          //   Math.floor(data2.body.track.loudness)
-          // );
-          // if (
-          //   (data2.body.track.key === 0 && data2.body.track.loudness === -1) ||
-          //   data2.body.track.loudness === 0
-          // ) {
-          //   ("red and bright: 0,100,90");
-          // } else if (
-          //   data2.body.track.key === 0 &&
-          //   data2.body.track.loudness === -2
-          // ) {
-          //   ("red and less bright: 0,100,82");
-          // } else if (
-          //   data2.body.track.key === 0 &&
-          //   data2.body.track.loudness === -3
-          // ) {
-          //   ("red and even less bright: 0,100,74");
-          // }
-
-          switch (Math.floor(data2.body.track.loudness)) {
-            case -1:
-              color3 = 90;
-              console.log("color3", color3);
-              break;
-            case -2:
-              color3 = 82;
-              console.log("color3", color3);
-              break;
-            case -3:
-              color3 = 74;
-              console.log("color3", color3);
-              break;
-            case -4:
-              color4 = 66;
-              console.log("color3", color3);
-              break;
-            case -5:
-              color3 = 58;
-              console.log("color3", color3);
-              break;
-            case -6:
-              color3 = 50;
-              console.log("color3", color3);
-              break;
-            case -7:
-              color3 = 42;
-              console.log("color3", color3);
-              break;
-            case -8:
-              color3 = 34;
-              console.log("color3", color3);
-              break;
-            case -9:
-              color3 = 26;
-              console.log("color3", color3);
-              break;
-            case -10:
-              color3 = 18;
-              console.log("color3", color3);
-
-              break;
-          }
-          let colors = ` "hsl(${color1}, ${color2 + "%"}, ${color3 + "%"}" )`;
-          console.log("COLORS is", colors);
-        },
-
-        400
-      );
+      promises.push(spotifyApi.getAudioAnalysisForTrack(trackId + ""));
     }
+    Promise.all(promises).then(datas => {
+      let colors = [];
+      for (var i = 0; i < datas.length; i++) {
+        let color1 = 30 * datas[i].body.track.key;
+        let color2 = 100;
+        let color3 = 98 + 8 * Math.floor(datas[i].body.track.loudness);
+        colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
+      }
+      console.log("COLORS is", colors);
+      res.render("generatedArt", { colors });
+    });
   });
-}, 200);
+});
 
 // Retrieve an access token.
 // spotifyApi.clientCredentialsGrant().then(
