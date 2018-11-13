@@ -89,9 +89,6 @@ app.use("/auth", authRoutes);
 const login = require("./routes/auth");
 app.use("/", login);
 
-const authRoutes = require("./routes/auth");
-app.use("/auth", authRoutes);
-
 const dashboard = require("./routes/index");
 app.get("/dashboard", dashboard);
 
@@ -103,5 +100,8 @@ app.get("/generatedArt", generatedArt);
 
 const about = require("./routes/index");
 app.get("/about", about);
+
+const generate = require("./routes/generate");
+app.get("generatedArt", generate);
 
 module.exports = app;

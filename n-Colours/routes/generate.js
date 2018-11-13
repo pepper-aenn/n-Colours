@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 
 const SpotifyWebApi = require("spotify-web-api-node");
+const Playlist = require("../models/Playlist");
 
 // Remember to paste your credentials here
 var spotifyApi = new SpotifyWebApi({
@@ -21,13 +22,48 @@ spotifyApi.clientCredentialsGrant().then(
   }
 );
 
+//working with the manually entered playlistID
 const URL =
   "https://open.spotify.com/user/annaundco.kg/playlist/1RGBEfsPYpCnvRI8S7dgsi?si=kBmkKrB-QJmF9CXlbQl7DQ";
-var sub = URL.substr(52, 22);
+
+var h = URL.split("/")[6];
+var sub = h.substr(0, 22);
 const urlOfId = "" + sub + "";
+
+console.log("maybe the 6th position of /, who knows:", h);
 
 console.log("SUBSTRING", sub);
 console.log("URLOFID", urlOfId);
+
+//trying to work with the given playlistID
+router.get("/dashboard", (req, res, next) => {
+  res.render("/dashboard");
+});
+
+router.post("/dashboard", (req, res, next) => {
+  const playlist_url = req.body.Playlist - ID;
+  console.log(playlist_url);
+
+  if (playlist_url === "") {
+    res.render({ message: "Indicate Playlist URL" });
+    return;
+  }
+
+  const newPlaylist = new Playlist({
+    playlist_url
+  });
+
+  newPlaylist
+    .save()
+    .then(() => {
+      res.redirect("/generatedArt");
+    })
+    .catch(err => {
+      res.render("/dashboard", { message: "Something went wrong" });
+    });
+});
+
+//defining the colors
 let color1;
 let color2 = 100;
 let color3;
