@@ -84,19 +84,4 @@ app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/", require("./routes/generate"));
 
-// const dashboard = require("./routes/index");
-// app.get("/dashboard", dashboard);
-
-// const myArt = require("./routes/index");
-// app.get("/myArt", myArt);
-
-// const generatedArt = require("./routes/index");
-// app.get("/generatedArt", generatedArt);
-
-// const about = require("./routes/index");
-// app.get("/about", about);
-
-// const generate = require("./routes/generate");
-// app.get("generatedArt", generate);
-
 module.exports = app;
