@@ -1,16 +1,31 @@
-<p>Welcome Home. </p>
+<header>
 
-<br>
-<a href="./myArt">See your generated Art</a>
-<br>
-<br>
+  <a>n-Colors</a>
+
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link" href="/dashboard">Generate Art</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/myArt">My Art</a>
+    </li>
+  </ul>
 
 
-<a href="/about">About.</a>
-<br>
-<br>
-<form action="/dashboard" method="POST" id="form-container">
-  <label for="Playlist-ID">Enter your Playlist-ID</label>
-  <input id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id">
-  <button>Create Art</button>
+</header>
+<div class="content">
+
+
+  <form action="/dashboard" method="POST" id="form-container">
+    <label for="Playlist-ID">Enter your Playlist-ID</label>
+    <input id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id">
+    {{#if message }}
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert—check it out!
+    </div>
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <button>Create Art</button>
+</div>
 </form>
