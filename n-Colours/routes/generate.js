@@ -86,10 +86,7 @@ router.post("/dashboard", (req, res, next) => {
   let URL = req.body.PlaylistID;
   var h = URL.split("/")[6];
   var sub = h.substr(0, 22);
-  let urlOfId = "" + sub + "";
-  let color1;
-  let color2 = 100;
-  let color3;
+  let urlOfId = sub + "";
 
   console.log("maybe the 6th position of /, who knows:", h);
   console.log("SUBSTRING", sub);
@@ -98,29 +95,30 @@ router.post("/dashboard", (req, res, next) => {
   let trackId = "";
   let arrayLength = 0;
 
-  setTimeout(() => {
-    spotifyApi.getPlaylistTracks("" + sub + "").then(data => {
-      arrayLength = data.body.items.length;
-      console.log("array length", arrayLength);
+  spotifyApi.getPlaylistTracks("" + sub + "").then(data => {
+    arrayLength = data.body.items.length;
+    console.log("array length", arrayLength);
 
+    let promises = [];
+
+    for (var i = 0; i < arrayLength; i++) {
+      console.log("Daten von Spotify", data.body.items[i].track.id);
+      trackId = data.body.items[i].track.id;
+      // console.log("gespeichert in einer Variable", trackId);
+      promises.push(spotifyApi.getAudioAnalysisForTrack(trackId + ""));
+    }
+    Promise.all(promises).then(datas => {
       let colors = [];
-
-      for (var i = 0; i < arrayLength; i++) {
-        console.log("Daten von Spotify", data.body.items[i].track.id);
-        trackId = data.body.items[i].track.id;
-        // console.log("gespeichert in einer Variable", trackId);
-
-        spotifyApi.getAudioAnalysisForTrack("" + trackId + "").then(data2 => {
-          color1 = 30 * data2.body.track.key;
-
-          color3 = 98 + 8 * Math.floor(data2.body.track.loudness);
-          colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
-          console.log("COLORS is", colors);
-        });
+      for (var i = 0; i < datas.length; i++) {
+        let color1 = 30 * datas[i].body.track.key;
+        let color2 = 100;
+        let color3 = 98 + 8 * Math.floor(datas[i].body.track.loudness);
+        colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
       }
+      console.log("COLORS is", colors);
+      res.render("generatedArt", { colors });
     });
-  }, 200);
-  res.redirect("/generatedArt");
+  });
 });
 
 // Retrieve an access token.

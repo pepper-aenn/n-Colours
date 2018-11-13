@@ -3,7 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF; }
+  color: #00b7ff; }
 
 #form {
   margin: 30px auto;
@@ -36,12 +36,19 @@ a {
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .3s ease background;
+  transition: 0.3s ease background;
   width: 100%; }
 
 #form button:hover {
   background: #fff;
   color: #43a3e6;
-  transition: .3s ease background; }
+  transition: 0.3s ease background; }
+
+.picture {
+  display: flex; }
+
+.square {
+  height: 100px;
+  width: 100px; }
 
 /*# sourceMappingURL=style.css.map */
