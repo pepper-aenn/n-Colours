@@ -65,6 +65,7 @@ router.get("/dashboard", (req, res, next) => {
 router.post("/dashboard", (req, res, next) => {
   // const playlist_url = req.body.PlaylistID;
   let URL = req.body.PlaylistID;
+  console.log("hello")
   var h = URL.split("/")[6];
   var sub = h.substr(0, 22);
   // let urlOfId = sub + "";
