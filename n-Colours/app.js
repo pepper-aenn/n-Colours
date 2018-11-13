@@ -81,7 +81,7 @@ app.use(flash());
 require("./passport")(app);
 
 app.use("/", require("./routes/index"));
-app.use("/auth", require("./routes/auth"));
+app.use("/", require("./routes/auth"));
 app.use("/", require("./routes/generate"));
 
 module.exports = app;
