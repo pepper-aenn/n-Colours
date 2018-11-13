@@ -4,7 +4,7 @@ const app = require("../app");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.render("login");
 });
 
 router.get("/dashboard", (req, res, next) => {

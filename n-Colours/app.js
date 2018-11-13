@@ -80,28 +80,23 @@ app.use(
 app.use(flash());
 require("./passport")(app);
 
-const index = require("./routes/index");
-app.use("/", index);
+app.use("/", require("./routes/index"));
+app.use("/auth", require("./routes/auth"));
+app.use("/", require("./routes/generate"));
 
-const authRoutes = require("./routes/auth");
-app.use("/auth", authRoutes);
+// const dashboard = require("./routes/index");
+// app.get("/dashboard", dashboard);
 
-const login = require("./routes/auth");
-app.use("/", login);
+// const myArt = require("./routes/index");
+// app.get("/myArt", myArt);
 
-const dashboard = require("./routes/index");
-app.get("/dashboard", dashboard);
+// const generatedArt = require("./routes/index");
+// app.get("/generatedArt", generatedArt);
 
-const myArt = require("./routes/index");
-app.get("/myArt", myArt);
+// const about = require("./routes/index");
+// app.get("/about", about);
 
-const generatedArt = require("./routes/index");
-app.get("/generatedArt", generatedArt);
-
-const about = require("./routes/index");
-app.get("/about", about);
-
-const generate = require("./routes/generate");
-app.get("generatedArt", generate);
+// const generate = require("./routes/generate");
+// app.get("generatedArt", generate);
 
 module.exports = app;
