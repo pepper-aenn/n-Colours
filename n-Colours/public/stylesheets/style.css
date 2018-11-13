@@ -45,7 +45,9 @@ a {
   transition: 0.3s ease background; }
 
 .picture {
-  display: flex; }
+  display: flex;
+  width: 800px;
+  align-content: space-between; }
 
 .square {
   height: 100px;
