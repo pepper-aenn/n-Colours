@@ -78,30 +78,33 @@ router.post("/dashboard", (req, res, next) => {
   let trackId = "";
   let arrayLength = 0;
 
-  spotifyApi.getPlaylistTracks("" + sub + "").then(data => {
-    arrayLength = data.body.items.length;
-    // console.log("array length", arrayLength);
+  spotifyApi
+    .getPlaylistTracks("" + sub + "")
+    .then(data => {
+      arrayLength = data.body.items.length;
+      // console.log("array length", arrayLength);
 
-    let promises = [];
+      let promises = [];
 
-    for (var i = 0; i < arrayLength; i++) {
-      // console.log("Daten von Spotify", data.body.items[i].track.id);
-      trackId = data.body.items[i].track.id;
-      // console.log("gespeichert in einer Variable", trackId);
-      promises.push(spotifyApi.getAudioAnalysisForTrack(trackId + ""));
-    }
-    Promise.all(promises).then(datas => {
-      let colors = [];
-      for (var i = 0; i < datas.length; i++) {
-        let color1 = 30 * datas[i].body.track.key;
-        let color2 = 100;
-        let color3 = 98 + 8 * Math.floor(datas[i].body.track.loudness);
-        colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
+      for (var i = 0; i < arrayLength; i++) {
+        // console.log("Daten von Spotify", data.body.items[i].track.id);
+        trackId = data.body.items[i].track.id;
+        // console.log("gespeichert in einer Variable", trackId);
+        promises.push(spotifyApi.getAudioAnalysisForTrack(trackId + ""));
       }
-      // console.log("COLORS is", colors);
-      res.render("generatedArt", { colors });
-    });
-  });
+      Promise.all(promises).then(datas => {
+        let colors = [];
+        for (var i = 0; i < datas.length; i++) {
+          let color1 = 30 * datas[i].body.track.key;
+          let color2 = 100;
+          let color3 = 98 + 8 * Math.floor(datas[i].body.track.loudness);
+          colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
+        }
+        // console.log("COLORS is", colors);
+        res.render("generatedArt", { colors });
+      });
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;
