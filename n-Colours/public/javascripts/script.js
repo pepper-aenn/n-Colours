@@ -5,3 +5,10 @@ document.addEventListener(
   },
   false
 );
+$("#how").click(function() {
+  $("div").removeClass("explain");
+});
+
+$("#close").click(function() {
+  $(".test").addClass("explain");
+});

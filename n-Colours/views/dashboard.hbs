@@ -15,17 +15,27 @@
 </header>
 <div class="content">
 
+  <div class="form">
 
-  <form action="/dashboard" method="POST" id="form-container">
-    <label for="Playlist-ID">Enter your Playlist-ID</label>
-    <input id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id">
-    {{#if message }}
-    <div class="alert alert-danger" role="alert">
-      A simple danger alert—check it out!
-    </div>
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
+    <form action="/dashboard" method="POST" id="form-container">
+      <label for="Playlist-ID">Enter your Playlist-ID</label>
+      <input id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id">
+      {{#if message }}
+      <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+      </div>
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-    <button>Create Art</button>
+      <button>Create Art</button>
+
+  </div>
 </div>
 </form>
+<button id="how" class="display">How to</button>
+<div class="explain test">
+  {{!-- <div class="transparent"></div> --}}
+  <img src="images/explanation.png" alt="explanation">
+  <button id="close">X</button>
+
+</div>
