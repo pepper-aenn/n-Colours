@@ -15,7 +15,7 @@ const flash = require("connect-flash");
 
 mongoose
   .connect(
-    "mongodb://localhost/n-colours",
+    process.env.MONGODB_URI,
     { useNewUrlParser: true }
   )
   .then(x => {
