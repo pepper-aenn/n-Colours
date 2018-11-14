@@ -10,9 +10,10 @@ body {
 }
 
 h1 {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-left: 60px;
+  padding-top: 40px;
   display: flex;
+  font-family: "Permanent Marker", cursive;
 }
 
 header {
@@ -130,15 +131,15 @@ ul li a {
   border-radius: 5px;
 }
 
-.main-content {
-  width: 1120px;
-  height: fit-content;
-  margin: 270px auto;
-  display: flex;
+// .main-content {
+//   width: 1120px;
+//   height: fit-content;
+//   margin: 270px auto;
+//   display: flex;
 
-  justify-content: center;
-  // background-color: lightgrey;
-}
+//   justify-content: center;
+//   // background-color: lightgrey;
+// }
 
 footer {
   border-top: 0.2px solid lightgray;
@@ -158,6 +159,10 @@ footer {
 
 h2 {
   margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  margin-left: 30%;
 }
 
 footer a {
@@ -216,9 +221,10 @@ a:hover {
 }
 
 button {
-  padding: 3px 7px;
+  padding: 1px 5px;
   border-radius: 5px;
   margin-left: 20px;
+  color: grey;
 }
 
 // .current-link {
@@ -269,3 +275,49 @@ img {
 //   width: 1000px;
 //   height: 1000px;
 // }
+
+.container {
+  background-color: papayawhip;
+  margin-top: 300px;
+  width: 600px;
+  padding: 0;
+}
+
+#f-group {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#user {
+  margin-right: 17px;
+  margin-top: 6px;
+}
+
+#pw {
+  margin-right: 20px;
+  margin-top: 6px;
+}
+
+#mail {
+  margin-right: 50px;
+  margin-top: 6px;
+}
+
+#createAcc {
+  display: flex;
+  justify-content: center;
+  margin-left: 24%;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#LogIn {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
