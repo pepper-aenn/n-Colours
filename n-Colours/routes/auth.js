@@ -60,7 +60,7 @@ router.post("/auth/signup", (req, res, next) => {
   });
 });
 
-router.get("/auth/logout", (req, res) => {
+router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/");
 });

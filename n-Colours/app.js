@@ -80,6 +80,12 @@ app.use(
 app.use(flash());
 require("./passport")(app);
 
+app.use((req, res, next) => {
+  res.locals.isConnected = !!req.user;
+  // res.locals.isBoss = req.user && req.user.role === 'Boss'
+  next();
+});
+
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
 app.use("/", require("./routes/generate"));

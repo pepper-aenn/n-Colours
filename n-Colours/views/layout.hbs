@@ -15,7 +15,26 @@
 <body>
   <header>
 
+    <h1>n-Colours</h1>
 
+
+    {{#if isConnected}}
+
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard">Generate Art</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/myArt">My Art</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+
+    </ul>
+
+
+    {{/if}}
 
 
   </header>
@@ -30,7 +49,7 @@
   <footer>
     <div class="footer">
 
-      <p>© Copyright Team Anna</p>
+      <p>© Copyright Team Anna 2018</p>
       <a href="/about">About</a>
     </div>
 
