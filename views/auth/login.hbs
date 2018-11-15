@@ -5,40 +5,43 @@
   <p>LogIn</p>
 </div> --}}
 
+<div class="container">
+  <h2>Login</h2>
 
-<form action="/" method="POST" id="form-container">
-  <div class="username">
+  <form action="/" method="POST" id="form-container">
+    <div class="username">
 
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username" placeholder=" JonSnow">
+      <label for="username">Username</label>
+      <input id="username" type="text" name="username" placeholder=" JonSnow">
 
-  </div>
-
-
-  <div class="password">
-
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder=" Your password">
-
-  </div>
+    </div>
 
 
+    <div class="password">
 
-  {{#if message }}
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder=" Your password">
 
-  <button type="submit">LogIn</button>
-  <div class="submit">
+    </div>
 
 
 
-    <p class="account-message">
-      No account yet?
-      <a href="../auth/signup">SignUp.</a>
-    </p>
-  </div>
-</form>
+    {{#if message }}
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert—check it out!
+    </div>
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <button type="submit">LogIn</button>
+    <div class="submit">
+
+
+
+      <p class="account-message">
+        No account yet?
+        <a href="../auth/signup">SignUp.</a>
+      </p>
+    </div>
+  </form>
+</div>

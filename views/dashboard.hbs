@@ -1,41 +1,35 @@
-<header>
-  {{!--
-  <a>n-Colors</a>
-
-  <ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link" href="/dashboard">Generate Art</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="/myArt">My Art</a>
-    </li>
-  </ul> --}}
-  {{message}}
-
-</header>
-<div class="content">
+<div class="content container">
 
   <div class="form">
 
-    <form action="/dashboard" method="POST" id="form-container">
-      <label for="Playlist-ID">Enter your Playlist-ID</label>
-      <input id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id">
-      {{#if message }}
-      <div class="alert alert-danger" role="alert">
-        A simple danger alert—check it out!
-      </div>
-      <div class="error-message">{{ message }}</div>
-      {{/if}}
+    <form action="/dashboard" method="POST">
+      <div class="f-group">
 
-      <button>Create Art</button>
+        <div class="form-group row">
+
+          <label class="col-m-2" for="Playlist-ID">Enter your Playlist-ID</label>
+          <div class="col-sm-6">
+
+            <input class="col-m-7" id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id" class="form-control">
+          </div>
+          {{#if message }}
+          <div class="alert alert-danger" role="alert">
+            A simple danger alert—check it out!
+          </div>
+          <div class="error-message">{{ message }}</div>
+          {{/if}}
+
+          <button>Create Art</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <button id="how" class="display">How to</button>
+  <div class="explain test">
+    {{!-- <div class="transparent"></div> --}}
+    <img src="images/explanation.png" alt="explanation">
+    <button id="close">X</button>
 
   </div>
-</div>
-</form>
-<button id="how" class="display">How to</button>
-<div class="explain test">
-  {{!-- <div class="transparent"></div> --}}
-  <img src="images/explanation.png" alt="explanation">
-  <button id="close">X</button>
-
 </div>
