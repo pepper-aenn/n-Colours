@@ -6,42 +6,33 @@
 </div> --}}
 
 <div class="form-container">
-  <h2>Login</h2>
 
   <form action="/" method="POST">
-    <div class="username" id="user">
-
+    <h2 id="LOG">Login</h2>
+    <div class="username">
       <label for="username">Username</label>
-      <input id="user" type="text" name="username" placeholder=" JonSnow">
-
+      <input type="text" name="username" placeholder=" Thor">
     </div>
 
-
-    <div class="password" id="pw">
-
+    <div class="password">
       <label for="password">Password</label>
-      <input id="password" type="password" name="password" placeholder=" Your password">
-
+      <input type="password" name="password" placeholder=" Thor's password">
     </div>
+    <div class="noAcc">
+    <p class="account-message">
+      No account yet?
+      <a href="../auth/signup"> <strong>SignUp.</strong></a>
+    </p>
+    <button type="submit" id="submit">LogIn</button>
+  </div>
 
-
-
-    {{#if message }}
+    {{!-- {{#if message }}
     <div class="alert alert-danger" role="alert">
       A simple danger alert—check it out!
     </div>
     <div class="error-message">{{ message }}</div>
-    {{/if}}
+    {{/if}} --}}
 
-    <button type="submit">LogIn</button>
-    <div class="submit">
-
-
-
-      <p class="account-message">
-        No account yet?
-        <a href="../auth/signup"> <strong>SignUp.</strong></a>
-      </p>
-    </div>
+    
   </form>
 </div>

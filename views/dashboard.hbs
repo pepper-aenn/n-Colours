@@ -1,37 +1,28 @@
-
-
-
   <div class="form-container">
 
     <form action="/dashboard" method="POST">
-      <div class="f-group" id= "f-group">
-
-        <div class="form-group row">
-
+    <h2 id="PLAY">Your Playlist</h2>
+          <div class="form-group-row">
           <label class="col-m-2" for="Playlist-ID">Enter your Playlist-ID</label>
           <div class="col-sm-6">
-
             <input class="col-m-7" id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id" class="form-control">
           </div>
-          {{#if message }}
+          {{!-- {{#if message }}
           <div class="alert alert-danger" role="alert">
             A simple danger alert—check it out!
           </div>
           <div class="error-message">{{ message }}</div>
-          {{/if}}
-
+          {{/if}} --}}
           <button id="createId">Create Art</button>
-        </div>
-      
 
-  </div>
   <button id="how" class="display">How to</button>
   <div class="explain test">
     {{!-- <div class="transparent"></div> --}}
     <img src="images/explanation.png" alt="explanation">
     <button id="close">X</button>
     </form>
+
+  </div>
 </div>
-  </div>
-  </div>
+  
 
