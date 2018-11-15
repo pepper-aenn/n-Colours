@@ -31,42 +31,12 @@ router.get("/dashboard", (req, res, next) => {
   res.render("/dashboard");
 });
 
-// router.post("/dashboard", (req, res, next) => {
-//   console.log("--------------------------------------------------");
-
-//   const playlist_url = req.body.PlaylistID;
-//   url = req.body.PlaylistID;
-
-//   console.log("playlist_url", playlist_url);
-//   console.log("I am the URL", url);
-
-//   if (playlist_url === "") {
-//     res.render({ message: "Indicate Playlist URL" });
-//     return;
-//   }
-
-//   const newPlaylist = new Playlist({
-//     playlist_url
-//   });
-
-//   newPlaylist
-//     .save()
-//     .then(() => {
-//       console.log("SAVED");
-
-//       res.redirect("/generatedArt");
-//     })
-//     .catch(err => {
-//       res.render("/dashboard", { message: "Something went wrong" });
-//     });
-// });
-
 router.post("/dashboard", (req, res, next) => {
   // const playlist_url = req.body.PlaylistID;
   let URL = req.body.PlaylistID;
   var h = URL.split("/")[6];
   var sub = h.substr(0, 22);
-  // console.log("hello");
+  console.log("hello");
 
   // // let urlOfId = sub + "";
   // console.log("mierrrrrrr", URL);
@@ -77,6 +47,11 @@ router.post("/dashboard", (req, res, next) => {
 
   let trackId = "";
   let arrayLength = 0;
+
+  spotifyApi.getPlaylist("" + sub + "").then(data2 => {
+    playlist_name = data2.body.name;
+    console.log("I am a playlist and i am called:", playlist_name);
+  });
 
   spotifyApi
     .getPlaylistTracks("" + sub + "")
@@ -101,7 +76,34 @@ router.post("/dashboard", (req, res, next) => {
           colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
         }
         // console.log("COLORS is", colors);
-        res.render("generatedArt", { colors });
+
+        //create Playlist in DB
+        let playlist_url = req.body.PlaylistID;
+        // let playlist_name= ;
+        let playlist_array = promises;
+
+        if (playlist_url === "") {
+          res.render({ message: "Indicate Playlist URL" });
+          return;
+        }
+
+        const newPlaylist = new Playlist({
+          playlist_name,
+          playlist_url: playlist_url,
+          playlist_array: playlist_array
+        });
+
+        newPlaylist
+          .save()
+          .then(() => {
+            console.log("SAVED");
+
+            // res.redirect("/generatedArt")-> DRAW;
+            res.render("generatedArt", { colors });
+          })
+          .catch(err => {
+            res.render("/dashboard", { message: "Something went wrong" });
+          });
       });
     })
     .catch(err => console.log(err));

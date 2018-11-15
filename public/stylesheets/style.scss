@@ -84,6 +84,10 @@ ul li a {
   border-radius: 5px;
 }
 
+ul li a:hover {
+  text-decoration: underline;
+}
+
 // .main-content {
 //   width: 1120px;
 //   height: fit-content;
