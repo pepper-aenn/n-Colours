@@ -53,6 +53,9 @@ h1 {
   font-family: "Permanent Marker", cursive;
   text-decoration: none !important; }
 
+#thor:hover {
+  text-decoration: none; }
+
 h2 {
   margin-top: 20px;
   display: flex;
@@ -126,9 +129,10 @@ input:focus {
   justify-content: flex-end;
   padding: 5px; }
 
-.square {
-  height: 100px;
-  width: 100px; }
+#square {
+  margin: 4px;
+  height: 50px;
+  width: 50px; }
 
 #goBack {
   display: flex;
@@ -206,6 +210,28 @@ img {
   width: fit-content;
   height: fit-content;
   position: absolute; }
+
+.container {
+  margin-top: 300px;
+  width: 600px;
+  padding: 0;
+  position: relative; }
+
+.f-group {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.col-m-7 {
+  margin-left: 75px; }
+
+.col-m-2 {
+  padding: 5px;
+  margin-left: 125px; }
 
 .createAcc {
   display: flex;
