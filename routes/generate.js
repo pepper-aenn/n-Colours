@@ -66,10 +66,10 @@ router.post("/dashboard", (req, res, next) => {
   let URL = req.body.PlaylistID;
   var h = URL.split("/")[6];
   var sub = h.substr(0, 22);
-  console.log("hello");
+  // console.log("hello");
 
-  // let urlOfId = sub + "";
-  console.log("mierrrrrrr", URL);
+  // // let urlOfId = sub + "";
+  // console.log("mierrrrrrr", URL);
 
   // console.log("maybe the 6th position of /, who knows:", h);
   // console.log("SUBSTRING", sub);

@@ -165,8 +165,8 @@ input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-input::-webkit-autofill {
-  -webkit-text-fill-color: black;
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset;
 }
 
 input:focus,
@@ -177,10 +177,10 @@ button:focus {
 }
 
 a:hover {
+  text-decoration: underline;
   color: peachpuff;
   font-size: 14px;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 button {
