@@ -6,7 +6,7 @@
 <div class="picture">
 
   {{#each colors}}
-  <div class="square" style="background-color: {{this}}"></div>
+  <div class="square" id="square" style="background-color: {{this}}"></div>
 
   {{/each}}
 
@@ -16,10 +16,13 @@
 <br>
 
 <div id="linksGenerated">
-  
-<a href="/dashboard" id="goBack">Go Back!</a>
 
-<a href="/myArt" id="saveArt">Save!</a>
+<div id="goBack">
+<a href="/dashboard" id="goBack">Go Back!</a>
+</div>  
+
+<div id="saveArt">
+<a href="/myArt">Save!</a></div>
 </div>
 
 </div>
