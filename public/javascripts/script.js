@@ -15,7 +15,7 @@ $("#close").click(function() {
 
 $('[data-toggle="tooltip"]').tooltip();
 
-$('[data-toggle="tooltip"]').mouseenter(function() {
+$('[data="tooltip"]').mouseenter(function() {
   setTimeout(() => {
     $(".tooltip").css("top", 50);
   }, 10);
