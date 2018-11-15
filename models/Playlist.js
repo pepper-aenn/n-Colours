@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 const playlistSchema = new Schema(
   {
-    playlist_url: String
+    playlist_name: String,
+    playlist_url: String,
+    playlist_array: []
     // playlist_picture: Image
   },
   {

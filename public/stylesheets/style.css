@@ -52,6 +52,9 @@ ul li a {
   border: none;
   border-radius: 5px; }
 
+ul li a:hover {
+  text-decoration: underline; }
+
 footer {
   border-top: 0.2px solid lightgray;
   display: flex;
