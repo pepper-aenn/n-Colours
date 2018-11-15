@@ -1,28 +1,40 @@
 <div class="container">
-  <h2>Your playlist as Art</h2>
+  <h2>Your playlist "{{playlist_name}}" as Art</h2>
   <div class="picture">
 
-    {{#each colors}}
-    <div class="square" id="square" style="background-color: {{this}}" data-toggle="tooltip" title="Hooray!"></div>
+    {{#each objectSongs}}
+    <div class="square" id="square" style="background-color: {{this.color}}" data-toggle="tooltip" title=" {{this.name}} - {{this.artists}}"></div>
 
     {{/each}}
+
+
 
   </div>
 
   <br>
   <br>
 
-  <div id="linksGenerated">
+  <div id="
+      linksGenerated">
 
     <div id="goBack">
       <a href="/dashboard" id="goBack">Go Back!</a>
     </div>
 
+
     <div id="saveArt">
       <a href="/myArt">Save!</a></div>
+
+
   </div>
 
-  <div id="saveArt">
-    <a href="/myArt">Save!</a></div>
-</div>
+  <p>{{play_songs}}</p>
+
+  {{!-- <iframe src="https://open.spotify.com/embed/user/annaundco.kg/playlist/1RGBEfsPYpCnvRI8S7dgsi" width="300"
+    height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+  <a href="https://p.scdn.co/mp3-preview/5924e68cd79c6c5b3c0f2515580391ac9b4ac43a?cid=aa5c3201523e459690a2030c2330ffa1">play</a>
+  --}}
+
 </div>

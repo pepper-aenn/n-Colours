@@ -38,13 +38,6 @@ router.post("/dashboard", (req, res, next) => {
   var sub = h.substr(0, 22);
   console.log("hello");
 
-  // // let urlOfId = sub + "";
-  // console.log("mierrrrrrr", URL);
-
-  // console.log("maybe the 6th position of /, who knows:", h);
-  // console.log("SUBSTRING", sub);
-  // console.log("URLOFID", urlOfId);
-
   let trackId = "";
   let arrayLength = 0;
 
@@ -53,27 +46,33 @@ router.post("/dashboard", (req, res, next) => {
     console.log("I am a playlist and i am called:", playlist_name);
   });
 
-  spotifyApi.getPlaylistTracks("" + sub + "").then(data3 => {
-    track_list = [];
-    list_length = data3.body.items.length;
-
-    for (var j = 0; j < list_length; j++) {
-      trackName = data3.body.items[j].track.name;
-      track_list.push(trackName);
-    }
-
-    // tracks = data3.body.items[0].track.name;
-    console.log("i am a list of tracks", track_list);
-    // return data3;
-  });
+  let names = [];
 
   spotifyApi
     .getPlaylistTracks("" + sub + "")
     .then(data => {
       arrayLength = data.body.items.length;
       // console.log("array length", arrayLength);
-
+      // console.log(data.body.items[1].track.name);
       let promises = [];
+      for (var i = 0; i < arrayLength; i++) {
+        // console.log(data.body.items[i].track.name);
+        names.push(data.body.items[i].track.name);
+      }
+
+      let artists = [];
+      for (var i = 0; i < arrayLength; i++) {
+        artist = data.body.items[i].track.artists[0].name;
+        artists.push(data.body.items[i].track.artists[0].name);
+      }
+      console.log(artists);
+
+      let play_songs = [];
+      for (var i = 0; i < arrayLength; i++) {
+        play_songs.push(data.body.items[i].track.preview_url);
+      }
+      // let song_url = data.body.items[2].track.preview_url;
+      console.log("I AM THE PREVIEW", play_songs);
 
       for (var i = 0; i < arrayLength; i++) {
         // console.log("Daten von Spotify", data.body.items[i].track.id);
@@ -83,13 +82,14 @@ router.post("/dashboard", (req, res, next) => {
       }
       Promise.all(promises).then(datas => {
         let colors = [];
+        // console.log(names);
+
         for (var i = 0; i < datas.length; i++) {
           let color1 = 30 * datas[i].body.track.key;
           let color2 = 100;
           let color3 = 98 + 8 * Math.floor(datas[i].body.track.loudness);
           colors.push(`hsl(${color1}, ${color2 + "%"}, ${color3 + "%"})`);
         }
-        // console.log("COLORS is", colors);
 
         //create Playlist in DB
         let playlist_url = req.body.PlaylistID;
@@ -101,16 +101,18 @@ router.post("/dashboard", (req, res, next) => {
           return;
         }
 
-        // Playlist.findOne(
-        //   { userplaylist_url },
-        //   "playlist_url",
-        //   (err, playlist) => {
-        //     if (playlist !== null) {
-        //       console.log("not saved, because the playlist is already saved");
-        //       return;
-        //     }
-        //   }
-        // );
+        let objectSongs = [];
+
+        for (let i = 0; i < names.length; i++) {
+          let color = {
+            name: names[i],
+            color: colors[i],
+            artists: artists[i]
+          };
+          objectSongs.push(color);
+        }
+
+        console.log(objectSongs);
 
         const newPlaylist = new Playlist({
           playlist_name,
@@ -121,10 +123,15 @@ router.post("/dashboard", (req, res, next) => {
         newPlaylist
           .save()
           .then(() => {
-            console.log("SAVED");
+            // return playlist_name;
+            // console.log("SAVED");
 
             // res.redirect("/generatedArt")-> DRAW;
-            res.render("generatedArt", { colors });
+            res.render("generatedArt", {
+              objectSongs,
+              playlist_name,
+              play_songs
+            });
           })
           .catch(err => {
             res.render("/dashboard", { message: "Something went wrong" });

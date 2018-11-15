@@ -65,6 +65,7 @@ h1 {
   text-decoration: none !important;
 }
 
+<<<<<<< HEAD
 h2 {
  
   margin-top: 20px;
@@ -76,6 +77,10 @@ h2 {
 }
 
 header {  
+=======
+header {
+  // background-color: peachpuff;
+>>>>>>> 4d7b90b46f9f937dc7898b6cd39cd654a6c1975e
   position: fixed;
   top: 20px;
   width: 100%;
@@ -115,6 +120,25 @@ ul li a:hover {
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
+.main-content {
+  //  padding-bottom: 400px;
+  overflow: hidden;
+  display: flex;
+  height: 950px;
+  justify-content: center;
+  //  justify-content: center;
+  //   width: 1120px;
+  //   height: fit-content;
+  //   margin: 270px auto;
+  //   display: flex;
+
+  //   justify-content: center;
+  //   // background-color: lightgrey;
+}
+
+>>>>>>> 4d7b90b46f9f937dc7898b6cd39cd654a6c1975e
 footer {
   border-top: 0.2px solid lightgray;
   display: flex;
@@ -260,6 +284,43 @@ img {
   position: absolute;
 }
 
+<<<<<<< HEAD
+=======
+// .transparent {
+//   background-color: rgba(103, 103, 103, 0.7);
+//   width: 1000px;
+//   height: 1000px;
+// }
+
+.container {
+  // background-color: papayawhip;
+  margin-top: 300px;
+  width: 600px;
+  padding: 0;
+  position: relative;
+}
+
+.f-group {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.col-m-7 {
+  // margin-top: 6px;
+  margin-left: 75px;
+}
+
+.col-m-2 {
+  padding: 5px;
+  margin-left: 125px;
+}
+
+>>>>>>> 4d7b90b46f9f937dc7898b6cd39cd654a6c1975e
 .createAcc {
   display: flex;
   justify-content: right;
@@ -272,6 +333,7 @@ img {
   align-content: space-between;
   padding-top: 20px;
 }
+<<<<<<< HEAD
 #submit{
   width: 80px;
   height: 35px;
@@ -279,6 +341,13 @@ img {
   margin-bottom: 20px;
   // margin-left: 305px;
   // margin-top: 20px,
+=======
+
+#square {
+  margin: 4px;
+  width: 50px;
+  height: 50px;
+>>>>>>> 4d7b90b46f9f937dc7898b6cd39cd654a6c1975e
 }
 
 #linksGenerated {
@@ -286,7 +355,14 @@ img {
   position: relative;
   flex-direction: row;
   height: 30px;
+<<<<<<< HEAD
   margin-left: 5px; 
+=======
+
+  // width;
+  // align-content: space-between;
+  margin-left: 5px; // align-content: space-around;
+>>>>>>> 4d7b90b46f9f937dc7898b6cd39cd654a6c1975e
 }
 
 .account-message{
