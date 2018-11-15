@@ -1,22 +1,23 @@
-
-
-
 <div class="container">
-<h2>Your playlist as Art</h2>
-<div class="picture">
+  <h2>Your playlist as Art</h2>
+  <div class="picture">
 
-  {{#each colors}}
-  <div class="square" style="background-color: {{this}}"></div>
+    {{#each colors}}
+    <div class="square" style="background-color: {{this}}" data-toggle="tooltip" title="Hooray!"></div>
 
-  {{/each}}
+    {{/each}}
 
-</div>
 
-<br>
-<br>
 
-<a href="/dashboard">Go Back!</a>
 
-<a href="/myArt">Save!</a>
+
+  </div>
+
+  <br>
+  <br>
+
+  <a href="/dashboard">Go Back!</a>
+
+  <a href="/myArt">Save!</a>
 
 </div>

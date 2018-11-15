@@ -53,6 +53,20 @@ router.post("/dashboard", (req, res, next) => {
     console.log("I am a playlist and i am called:", playlist_name);
   });
 
+  spotifyApi.getPlaylistTracks("" + sub + "").then(data3 => {
+    track_list = [];
+    list_length = data3.body.items.length;
+
+    for (var j = 0; j < list_length; j++) {
+      trackName = data3.body.items[j].track.name;
+      track_list.push(trackName);
+    }
+
+    // tracks = data3.body.items[0].track.name;
+    console.log("i am a list of tracks", track_list);
+    // return data3;
+  });
+
   spotifyApi
     .getPlaylistTracks("" + sub + "")
     .then(data => {
@@ -86,6 +100,17 @@ router.post("/dashboard", (req, res, next) => {
           res.render({ message: "Indicate Playlist URL" });
           return;
         }
+
+        // Playlist.findOne(
+        //   { userplaylist_url },
+        //   "playlist_url",
+        //   (err, playlist) => {
+        //     if (playlist !== null) {
+        //       console.log("not saved, because the playlist is already saved");
+        //       return;
+        //     }
+        //   }
+        // );
 
         const newPlaylist = new Playlist({
           playlist_name,

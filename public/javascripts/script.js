@@ -12,3 +12,11 @@ $("#how").click(function() {
 $("#close").click(function() {
   $(".test").addClass("explain");
 });
+
+$('[data-toggle="tooltip"]').tooltip();
+
+$('[data-toggle="tooltip"]').mouseenter(function() {
+  setTimeout(() => {
+    $(".tooltip").css("top", 50);
+  }, 10);
+});
