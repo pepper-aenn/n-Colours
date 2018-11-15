@@ -9,7 +9,8 @@ h1 {
   padding-left: 60px;
   padding-top: 40px;
   display: flex;
-  font-family: "Permanent Marker", cursive; }
+  font-family: "Permanent Marker", cursive;
+  text-decoration: none !important; }
 
 header {
   position: fixed;
@@ -57,7 +58,10 @@ ul li a:hover {
   text-decoration: underline; }
 
 .main-content {
-  position: relative; }
+  overflow: hidden;
+  display: flex;
+  height: 950px;
+  justify-content: center; }
 
 footer {
   border-top: 0.2px solid lightgray;
@@ -73,9 +77,8 @@ footer {
   padding-top: 20px; }
 
 h2 {
-  margin: 0 auto;
+  margin-right: 200px;
   padding: 5px;
-  padding-right: 15px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -95,7 +98,11 @@ input:focus {
 
 .form-container {
   display: flex;
-  flex-direction: wrap; }
+  flex-direction: column;
+  margin-top: 325px;
+  width: 600px;
+  padding: 0;
+  position: relative; }
 
 .username {
   margin: 20px auto; }
@@ -190,28 +197,23 @@ img {
   justify-content: center;
   align-items: center; }
 
-#user {
-  margin-right: 17px;
-  margin-top: 6px; }
+.col-m-7 {
+  margin-left: 75px; }
 
-#pw {
-  margin-right: 20px;
-  margin-top: 6px; }
+.col-m-2 {
+  padding: 5px;
+  margin-left: 125px; }
 
-#mail {
-  margin-right: 50px;
-  margin-top: 6px; }
-
-#createAcc {
+.createAcc {
   display: flex;
   justify-content: center;
-  margin-left: 24%;
+  margin-left: 50px;
   margin-top: 5px;
   font-size: 14px; }
 
 #LogIn {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 15px; }
 
 #square {
@@ -235,5 +237,8 @@ img {
   display: flex;
   justify-content: flex-end;
   margin-left: 460px; }
+
+.container {
+  bottom: 130px; }
 
 /*# sourceMappingURL=style.css.map */

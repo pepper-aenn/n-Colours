@@ -14,7 +14,12 @@ h1 {
   padding-top: 40px;
   display: flex;
   font-family: "Permanent Marker", cursive;
+  text-decoration: none !important;
+  
 }
+
+
+
 
 header {
   // background-color: peachpuff;
@@ -91,7 +96,12 @@ ul li a:hover {
 }
 
 .main-content {
-  position: relative;
+//  padding-bottom: 400px;
+ overflow: hidden;
+ display: flex;
+ height: 950px;
+ justify-content: center;
+//  justify-content: center;
 //   width: 1120px;
 //   height: fit-content;
 //   margin: 270px auto;
@@ -118,9 +128,9 @@ footer {
 }
 
 h2 {
-  margin: 0 auto;
+  margin-right: 200px;
   padding: 5px;
-  padding-right: 15px;
+  // padding-right: 15px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -139,12 +149,17 @@ input {
 }
 
 input:focus {
-  background-color: peachpuff;
+  background-color: rgb(255, 218, 185);
 }
 
 .form-container {
   display: flex;
-  flex-direction: wrap;
+  flex-direction: column;
+  // flex-direction: wrap;
+  margin-top: 325px;
+  width: 600px;
+  padding: 0;
+  position: relative;
 }
 
 .username {
@@ -269,32 +284,27 @@ img {
   align-items: center;
 }
 
-#user {
-  margin-right: 17px;
-  margin-top: 6px;
+.col-m-7{
+  // margin-top: 6px;
+  margin-left: 75px;
 }
 
-#pw {
-  margin-right: 20px;
-  margin-top: 6px;
+.col-m-2 {
+  padding: 5px;
+  margin-left: 125px;
 }
 
-#mail {
-  margin-right: 50px;
-  margin-top: 6px;
-}
-
-#createAcc {
+.createAcc {
   display: flex;
   justify-content: center;
-  margin-left: 24%;
+  margin-left: 50px;
   margin-top: 5px;
   font-size: 14px;
 }
 
 #LogIn {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin-top: 15px;
 }
 
@@ -330,10 +340,22 @@ img {
   // right: 0;
   margin-left: 460px;
 }
+.container {
+  // display: flex;
+  // justify-content: center;
+  bottom: 130px;
+}
 
-// #saveArt:hover {
-//   text-decoration: underline;
-//   color: peachpuff;
-//   font-size: 14px;
-//   font-weight: bold;
+// .account-message {
+//   display: flex;
+//   justify-content: flex-start;
+// }
+
+// .content-container{
+//   width: 950px;
+//   height: 200px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   top: 475px;
 // }
