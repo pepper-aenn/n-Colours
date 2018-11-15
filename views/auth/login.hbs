@@ -5,19 +5,19 @@
   <p>LogIn</p>
 </div> --}}
 
-<div class="container">
+<div class="form-container">
   <h2>Login</h2>
 
-  <form action="/" method="POST" id="form-container">
-    <div class="username">
+  <form action="/" method="POST">
+    <div class="username" id="user">
 
       <label for="username">Username</label>
-      <input id="username" type="text" name="username" placeholder=" JonSnow">
+      <input id="user" type="text" name="username" placeholder=" JonSnow">
 
     </div>
 
 
-    <div class="password">
+    <div class="password" id="pw">
 
       <label for="password">Password</label>
       <input id="password" type="password" name="password" placeholder=" Your password">
@@ -40,7 +40,7 @@
 
       <p class="account-message">
         No account yet?
-        <a href="../auth/signup">SignUp.</a>
+        <a href="../auth/signup"> <strong>SignUp.</strong></a>
       </p>
     </div>
   </form>
