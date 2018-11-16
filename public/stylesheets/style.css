@@ -184,19 +184,16 @@ img {
   background-color: white; }
 
 #how {
-  display: flex;
-  padding: 3px 7px;
-  border-radius: 5px;
-  margin-left: 20px; }
-
-#createId {
-  display: flex; }
+  display: relative; }
 
 .explain {
   width: fit-content;
   height: fit-content;
   position: absolute;
   display: none; }
+
+#createId {
+  display: flex; }
 
 .test button {
   border: none;

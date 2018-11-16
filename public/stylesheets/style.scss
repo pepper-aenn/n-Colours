@@ -65,12 +65,11 @@ h1 {
   text-decoration: none !important;
 }
 
-#thor:hover{
+#thor:hover {
   text-decoration: none;
 }
 
 h2 {
- 
   margin-top: 20px;
   // padding: 5px;
   display: flex;
@@ -79,7 +78,7 @@ h2 {
   font-family: "Permanent Marker", cursive;
 }
 
-header {  
+header {
   position: fixed;
   top: 20px;
   width: 100%;
@@ -148,7 +147,6 @@ input {
 input:focus {
   background-color: rgb(255, 218, 185);
 }
-
 
 //generatedArt route
 .picture {
@@ -231,16 +229,11 @@ img {
 }
 
 #how {
-  display: flex;
-  padding: 3px 7px;
-  border-radius: 5px;
-  margin-left: 20px;
+  display: relative;
+  // padding: 3px 7px;
+  // border-radius: 5px;
+  // margin-left: 20px;
 }
-
-#createId{
-  display: flex;
-}
-
 
 .explain {
   width: fit-content;
@@ -249,6 +242,9 @@ img {
   display: none;
 }
 
+#createId {
+  display: flex;
+}
 
 .test button {
   border: none;
@@ -305,13 +301,13 @@ img {
   // margin-top: 5px;
   // font-size: 14px;
 }
-.noAcc{
+.noAcc {
   display: flex;
   justify-content: baseline;
   align-content: space-between;
   padding-top: 20px;
 }
-#submit{
+#submit {
   width: 80px;
   height: 35px;
   margin-left: 115px;
@@ -325,16 +321,15 @@ img {
   position: relative;
   flex-direction: row;
   height: 30px;
-  margin-left: 5px; 
+  margin-left: 5px;
 }
 
-.account-message{
+.account-message {
   display: flex;
   justify-content: flex-start;
   padding-top: 5px;
 }
 
 #LOG {
-  padding-right: 15px; 
+  padding-right: 15px;
 }
-
