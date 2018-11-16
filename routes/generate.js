@@ -117,7 +117,8 @@ router.post("/dashboard", (req, res, next) => {
         const newPlaylist = new Playlist({
           playlist_name,
           playlist_url: playlist_url,
-          playlist_array: playlist_array
+          playlist_array: colors
+          // playlist_picture
         });
 
         newPlaylist

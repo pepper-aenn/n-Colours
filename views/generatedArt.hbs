@@ -4,7 +4,7 @@
   <div class="picture">
 
     {{#each objectSongs}}
-    <div class="square" id="square" style="background-color: {{this.color}}" data-toggle="tooltip" title=" {{this.name}} - {{this.artists}}"></div>
+    <div class="square" id="square" style="background-color: {{this.color}}" data-toggle="tooltip" title=" {{this.name}} - {{this.artists}}" content="{{this.play_songs}}"></div>
 
     {{/each}}
 
