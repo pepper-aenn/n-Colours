@@ -171,7 +171,6 @@ img {
   background-color: white; }
 
 #how {
-  display: relative;
   height: 25px; }
 
 .explain {
@@ -237,5 +236,8 @@ h5 {
 
 #close:hover {
   color: grey; }
+
+#createId {
+  margin-left: 390px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -207,7 +207,7 @@ img {
 }
 
 #how {
-  display: relative;
+  // display: relative;
   height: 25px;
   // padding: 3px 7px;
   // border-radius: 5px;
@@ -267,6 +267,7 @@ img {
 .INPUT:focus{
   background-color: rgb(255, 218, 185);
 }
+
 .flex {
   display: flex;
   flex-direction: row;
@@ -296,3 +297,19 @@ h5 {
 #close:hover {
   color: grey;
 }
+
+// .PLAY {
+//   width: 475px;
+//   height: 138px;
+// }
+
+#createId{
+  margin-left: 390px;
+}
+
+#Playlist-ID{
+  // margin-left: 165px;
+}
+
+
+
