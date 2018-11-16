@@ -40,6 +40,10 @@ router.post("/auth/signup", (req, res, next) => {
       return;
     }
 
+    console.log("TEST", bcryptSalt, bcrypt.genSaltSync(bcryptSalt));
+    console.log("TEST", password);
+    
+
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
 

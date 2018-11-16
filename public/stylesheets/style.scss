@@ -44,7 +44,6 @@ button {
   color: grey;
   border: solid grey 0.5;
 }
-
 button:hover {
   background-color: peachpuff;
   color: white;
@@ -192,27 +191,6 @@ input:focus {
   // position: relative;
 }
 
-.form-container1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 325px;
-  width: 600px;
-  // padding: 0;
-  // position: relative;
-}
-
-.username {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 20px auto;
-  margin-right: 15px;
-}
-// .password {
-//   margin: 20px auto;
-//   // margin-right: 5px;
-// }
-
 .container {
   margin-top: 300px;
   width: 600px;
@@ -242,24 +220,6 @@ img {
   display: none;
 }
 
-#createId {
-  display: flex;
-}
-
-.test button {
-  border: none;
-  position: absolute;
-  top: -30px;
-  right: -30px;
-  color: pink;
-  font-size: 20px;
-}
-
-.test {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-}
 
 // .transparent {
 //   background-color: rgba(103, 103, 103, 0.7);
@@ -268,52 +228,21 @@ img {
 // }
 
 .container {
-  // background-color: papayawhip;
   margin-top: 300px;
   width: 600px;
   padding: 0;
   position: relative;
 }
 
-.f-group {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.col-m-7 {
-  // margin-top: 6px;
-  margin-left: 75px;
-}
-
-.col-m-2 {
-  padding: 5px;
-  margin-left: 125px;
-}
-
-.createAcc {
-  display: flex;
-  justify-content: right;
-  // margin-top: 5px;
-  // font-size: 14px;
-}
 .noAcc {
   display: flex;
-  justify-content: baseline;
-  align-content: space-between;
-  padding-top: 20px;
+  padding-top: 10px;
 }
-#submit {
+
+.submit {
   width: 80px;
-  height: 35px;
-  margin-left: 115px;
-  margin-bottom: 20px;
-  // margin-left: 305px;
-  // margin-top: 20px,
+  height: 30px;
+  margin-left: 155px;
 }
 
 #linksGenerated {
@@ -324,12 +253,16 @@ img {
   margin-left: 5px;
 }
 
-.account-message {
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 5px;
+#createAcc{
+  width: 130px;
+  margin-left: 47px;
 }
 
-#LOG {
-  padding-right: 15px;
+.FORMS {
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.INPUT:focus{
+  background-color: rgb(255, 218, 185);
 }
