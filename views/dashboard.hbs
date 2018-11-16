@@ -1,29 +1,30 @@
 <div class="form-container">
-  <form>
+
   <form action="/dashboard" method="POST">
     <h2 id="PLAY">Your Playlist</h2>
-    <div class="form-group row">
-      <label for="inputUsername" class="col-sm-3 col-form-label">Playlist-ID</label>
-      <div class="col-sm-8">
-        <input type="username" class="form-control" id="inputUsername" placeholder="Thor">
-        <button id="createId">Create Art</button>
-        </div>
-        
-        </div>
-  </form>
+    <div class="form-group-row">
+      <label class="col-m-2" for="Playlist-ID">Enter your Playlist-ID</label>
+      <div class="col-sm-6">
+        <input class="col-m-7" id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id" class="form-control">
+      </div>
 
+
+      <button id="createId">Create Art</button>
+  </form>
+</div>
 <button id="how" class="display">How to</button>
+{{#if message }}
+<div class="alert alert-danger" role="alert">
+  {{message}}
+</div>
+{{/if}}
+
+{{!-- <p>{{message}}</p> --}}
 <div class="explain test">
   {{!-- <div class="transparent"></div> --}}
   <img src="images/explanation.png" alt="explanation">
   <button id="close">X</button>
-</div>
 
 
-  {{!-- {{#if message }}
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="error-message">{{ message }}</div>
-  {{/if}} --}}
+
 </div>

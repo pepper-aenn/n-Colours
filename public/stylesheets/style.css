@@ -171,7 +171,8 @@ img {
   background-color: white; }
 
 #how {
-  display: relative; }
+  display: relative;
+  height: 25px; }
 
 .explain {
   width: fit-content;
@@ -211,5 +212,30 @@ img {
 
 .INPUT:focus {
   background-color: peachpuff; }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 250px;
+  width: 1000px;
+  position: absolute;
+  margin-right: 50px; }
+
+h5 {
+  font-family: "Poppins";
+  font-size: 14px; }
+
+.card img {
+  padding-bottom: 0px;
+  object-fit: contain; }
+
+#close {
+  background-color: white; }
+
+#close:hover {
+  color: grey; }
 
 /*# sourceMappingURL=style.css.map */
