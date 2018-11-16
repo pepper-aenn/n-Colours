@@ -263,15 +263,14 @@ img {
   padding-right: 15px; }
 
 .flex {
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 auto;
   margin-top: 250px;
   width: 1000px;
-  position: absolute;
-  margin-right: 50px; }
+  position: absolute; }
 
 h5 {
   font-size: 14px;
@@ -286,5 +285,10 @@ h5 {
 
 #close:hover {
   color: grey; }
+
+.art {
+  padding: 10px;
+  border: 0.5px solid lightgrey;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=style.css.map */
