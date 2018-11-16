@@ -33,6 +33,10 @@ router.get("/dashboard", (req, res, next) => {
 
 router.post("/dashboard", (req, res, next) => {
   // const playlist_url = req.body.PlaylistID;
+  if (req.body.PlaylistID === "") {
+    res.render("dashboard", { message: "Indicate Playlist URL" });
+  }
+
   let URL = req.body.PlaylistID;
   var h = URL.split("/")[6];
   var sub = h.substr(0, 22);
@@ -43,7 +47,7 @@ router.post("/dashboard", (req, res, next) => {
 
   spotifyApi.getPlaylist("" + sub + "").then(data2 => {
     playlist_name = data2.body.name;
-    console.log("I am a playlist and i am called:", playlist_name);
+    // console.log("I am a playlist and i am called:", playlist_name);
   });
 
   let names = [];
@@ -96,11 +100,6 @@ router.post("/dashboard", (req, res, next) => {
         // let playlist_name= ;
         let playlist_array = promises;
 
-        if (playlist_url === "") {
-          res.render({ message: "Indicate Playlist URL" });
-          return;
-        }
-
         let objectSongs = [];
 
         for (let i = 0; i < names.length; i++) {
@@ -121,6 +120,8 @@ router.post("/dashboard", (req, res, next) => {
           // playlist_picture
         });
 
+        let message = "Something went wrong";
+
         newPlaylist
           .save()
           .then(() => {
@@ -135,7 +136,7 @@ router.post("/dashboard", (req, res, next) => {
             });
           })
           .catch(err => {
-            res.render("/dashboard", { message: "Something went wrong" });
+            res.render("/dashboard");
           });
       });
     })

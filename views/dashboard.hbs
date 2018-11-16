@@ -7,18 +7,22 @@
       <div class="col-sm-6">
         <input class="col-m-7" id="Playlist-ID" type="text" name="PlaylistID" placeholder="playlist-id" class="form-control">
       </div>
-      {{!-- {{#if message }}
-      <div class="alert alert-danger" role="alert">
-        A simple danger alert—check it out!
-      </div>
-      <div class="error-message">{{ message }}</div>
-      {{/if}} --}}
+
+
       <button id="createId">Create Art</button>
+      {{#if message }}
+      <div class="alert alert-danger" role="alert">
+        {{message}}
+      </div>
+      {{/if}}
   </form>
 </div>
 <button id="how" class="display">How to</button>
+
+
+
 <div class="explain test">
-  {{!-- <div class="transparent"></div> --}}
+
   <img src="images/explanation.png" alt="explanation">
   <button id="close">X</button>
 

@@ -274,8 +274,8 @@ img {
   margin-right: 50px; }
 
 h5 {
-  font-family: "Poppins";
-  font-size: 14px; }
+  font-size: 14px;
+  font: 12px "Poppins", Helvetica, Arial, sans-serif; }
 
 .card img {
   padding-bottom: 0px;

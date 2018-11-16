@@ -46,6 +46,12 @@
     <p class="account-message"> Already have an account?
       <a href="/"> <strong>LogIn.</strong></a></p>
   </div>
+
+  {{#if message}}
+  <div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+  {{/if}}
 </form>
 
 </div>

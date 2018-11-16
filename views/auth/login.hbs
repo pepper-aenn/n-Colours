@@ -19,20 +19,20 @@
       <input type="password" name="password" placeholder=" Thor's password">
     </div>
     <div class="noAcc">
-    <p class="account-message">
-      No account yet?
-      <a href="../auth/signup"> <strong>SignUp.</strong></a>
-    </p>
-    <button type="submit" id="submit">LogIn</button>
-  </div>
-
-    {{!-- {{#if message }}
-    <div class="alert alert-danger" role="alert">
-      A simple danger alert—check it out!
+      <p class="account-message">
+        No account yet?
+        <a href="../auth/signup"> <strong>SignUp.</strong></a>
+      </p>
+      <button type="submit" id="submit">LogIn</button>
     </div>
-    <div class="error-message">{{ message }}</div>
-    {{/if}} --}}
 
-    
+    {{#if message }}
+    <div class="alert alert-danger" role="alert">
+      {{ message }}
+    </div>
+    {{/if}}
+
+    <p>{{message}}</p>
+
   </form>
 </div>

@@ -26,18 +26,16 @@ router.get("/auth/signup", (req, res, next) => {
 });
 
 router.post("/auth/signup", (req, res, next) => {
+  if (req.body.username === "" || req.body.password === "") {
+    res.render("auth/signup", { message: "Indicate username and password" });
+  }
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-  if (username === "" || password === "") {
-    res.render("/auth/signup", { message: "Indicate username and password" });
-    return;
-  }
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("/signup", { message: "The username already exists" });
-      return;
+      res.render("auth/signup", { message: "The username already exists" });
     }
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
