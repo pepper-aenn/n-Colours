@@ -33,9 +33,9 @@ router.get("/dashboard", (req, res, next) => {
 
 router.post("/dashboard", (req, res, next) => {
   // const playlist_url = req.body.PlaylistID;
-  if (req.body.PlaylistID === "") {
-    res.render("dashboard", { message: "Indicate Playlist URL" });
-  }
+  // if (req.body.PlaylistID === "") {
+  //   res.render("dashboard", { message: "Indicate Playlist URL" });
+  // }
 
   let URL = req.body.PlaylistID;
   var h = URL.split("/")[6];
