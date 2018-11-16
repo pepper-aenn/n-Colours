@@ -157,19 +157,6 @@ input:focus {
   margin-top: 325px;
   width: 600px; }
 
-.form-container1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 325px;
-  width: 600px; }
-
-.username {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 20px auto;
-  margin-right: 15px; }
-
 .container {
   margin-top: 300px;
   width: 600px;
@@ -184,7 +171,6 @@ img {
   background-color: white; }
 
 #how {
-  display: relative;
   height: 25px; }
 
 .explain {
@@ -193,59 +179,20 @@ img {
   position: absolute;
   display: none; }
 
-#createId {
-  display: flex; }
-
-.test button {
-  border: none;
-  position: absolute;
-  top: -30px;
-  right: -30px;
-  color: pink;
-  font-size: 20px; }
-
-.test {
-  width: fit-content;
-  height: fit-content;
-  position: absolute; }
-
 .container {
   margin-top: 300px;
   width: 600px;
   padding: 0;
   position: relative; }
 
-.f-group {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.col-m-7 {
-  margin-left: 75px; }
-
-.col-m-2 {
-  padding: 5px;
-  margin-left: 125px; }
-
-.createAcc {
-  display: flex;
-  justify-content: right; }
-
 .noAcc {
   display: flex;
-  justify-content: baseline;
-  align-content: space-between;
-  padding-top: 20px; }
+  padding-top: 10px; }
 
-#submit {
+.submit {
   width: 80px;
-  height: 35px;
-  margin-left: 115px;
-  margin-bottom: 20px; }
+  height: 30px;
+  margin-left: 155px; }
 
 #linksGenerated {
   display: flex;
@@ -254,13 +201,16 @@ img {
   height: 30px;
   margin-left: 5px; }
 
-.account-message {
-  display: flex;
-  justify-content: flex-start;
-  padding-top: 5px; }
+#createAcc {
+  width: 130px;
+  margin-left: 47px; }
 
-#LOG {
-  padding-right: 15px; }
+.FORMS {
+  padding-right: 10px;
+  padding-bottom: 10px; }
+
+.INPUT:focus {
+  background-color: peachpuff; }
 
 .flex {
   margin: 0 auto;
@@ -285,6 +235,9 @@ h5 {
 
 #close:hover {
   color: grey; }
+
+#createId {
+  margin-left: 390px; }
 
 .art {
   padding: 10px;
