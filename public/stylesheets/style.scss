@@ -70,10 +70,11 @@ h1 {
 
 h2 {
   margin-top: 20px;
+  text-align: right;
   // padding: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: flex-end;
   font-family: "Permanent Marker", cursive;
 }
 
@@ -221,19 +222,18 @@ img {
   display: none;
 }
 
-
 // .transparent {
 //   background-color: rgba(103, 103, 103, 0.7);
 //   width: 1000px;
 //   height: 1000px;
 // }
 
-.container {
-  margin-top: 300px;
-  width: 600px;
-  padding: 0;
-  position: relative;
-}
+// .container {
+//   margin-top: 300px;
+//   width: 600px;
+//   padding: 0;
+//   position: relative;
+// }
 
 .noAcc {
   display: flex;
@@ -254,7 +254,7 @@ img {
   margin-left: 5px;
 }
 
-#createAcc{
+#createAcc {
   width: 130px;
   margin-left: 47px;
 }
@@ -264,7 +264,7 @@ img {
   padding-bottom: 10px;
 }
 
-.INPUT:focus{
+.INPUT:focus {
   background-color: rgb(255, 218, 185);
 }
 
@@ -304,15 +304,13 @@ h5 {
 //   height: 138px;
 // }
 
-#createId{
+#createId {
   margin-left: 390px;
 }
 
-#Playlist-ID{
+#Playlist-ID {
   // margin-left: 165px;
 }
-
-
 
 .art {
   padding: 10px;

@@ -58,9 +58,7 @@ h1 {
 
 h2 {
   margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  text-align: right;
   font-family: "Permanent Marker", cursive; }
 
 header {
@@ -178,12 +176,6 @@ img {
   height: fit-content;
   position: absolute;
   display: none; }
-
-.container {
-  margin-top: 300px;
-  width: 600px;
-  padding: 0;
-  position: relative; }
 
 .noAcc {
   display: flex;
