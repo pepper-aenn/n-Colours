@@ -178,7 +178,7 @@ input:focus {
 .main-content {
   overflow: hidden;
   display: flex;
-  height: 850px;
+  height: 1000px;
   justify-content: center;
 }
 
@@ -216,10 +216,17 @@ img {
 }
 
 .explain {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  display: none;
+  // width: fit-content;
+  // height: fit-content;
+  // position: absolute;
+  // bottom: 130px;
+  // right: 420px;
+  // display: none;
+}
+
+.explain-test {
+  background-color: blue;
+  padding: blue;
 }
 
 // .transparent {

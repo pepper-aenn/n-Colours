@@ -145,7 +145,7 @@ input:focus {
 .main-content {
   overflow: hidden;
   display: flex;
-  height: 850px;
+  height: 1000px;
   justify-content: center; }
 
 .form-container {
@@ -172,10 +172,11 @@ img {
   height: 25px; }
 
 .explain {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  display: none; }
+  background-color: red; }
+
+.explain-test {
+  background-color: blue;
+  padding: blue; }
 
 .noAcc {
   display: flex;
