@@ -37,8 +37,8 @@ router.post("/dashboard", (req, res, next) => {
   //   res.render("dashboard", { message: "Indicate Playlist URL" });
   // }
 
-  console.log("Hello it's me");
-  console.log("hello i am not empty");
+  // console.log("Hello it's me");
+  // console.log("hello i am not empty");
   let URL = req.body.PlaylistID;
 
   var h = URL.split("/")[6];
