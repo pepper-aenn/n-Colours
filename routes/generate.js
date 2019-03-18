@@ -72,14 +72,14 @@ router.post("/dashboard", (req, res, next) => {
         artist = data.body.items[i].track.artists[0].name;
         artists.push(data.body.items[i].track.artists[0].name);
       }
-      console.log(artists);
+      // console.log(artists);
 
       let play_songs = [];
       for (var i = 0; i < arrayLength; i++) {
         play_songs.push(data.body.items[i].track.preview_url);
       }
       // let song_url = data.body.items[2].track.preview_url;
-      console.log("I AM THE PREVIEW", play_songs);
+      // console.log("I AM THE PREVIEW", play_songs);
 
       for (var i = 0; i < arrayLength; i++) {
         // console.log("Daten von Spotify", data.body.items[i].track.id);
@@ -114,7 +114,7 @@ router.post("/dashboard", (req, res, next) => {
           objectSongs.push(color);
         }
 
-        console.log(objectSongs);
+        // console.log(objectSongs);
 
         const newPlaylist = new Playlist({
           playlist_name,

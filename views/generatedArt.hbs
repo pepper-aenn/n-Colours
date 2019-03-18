@@ -4,31 +4,28 @@
   <div class="picture">
 
     {{#each objectSongs}}
-    <div class="square" id="square" style="background-color: {{this.color}}" data-toggle="tooltip" title=" {{this.name}} - {{this.artists}}"
-      content="{{this.play_songs}}"></div>
+    <div class="square" id="square" style="background-color: {{this.color}}" data-toggle="tooltip"
+      title=" {{this.name}} - {{this.artists}}" content="{{this.play_songs}}"></div>
 
     {{/each}}
 
 
+    <br>
 
-  </div>
+    <div id="linksGenerated">
+      <div id="goBack">
+        <a href="/dashboard" id="goBack">Go Back!</a>
+      </div>
 
-  <br>
-  <br>
 
-  <div id="
-      linksGenerated">
+      <div id="saveArt">
+        <a href="/myArt">Save!</a></div>
 
-    <div id="goBack">
-      <a href="/dashboard" id="goBack">Go Back!</a>
+
+
     </div>
-
-
-    <div id="saveArt">
-      <a href="/myArt">Save!</a></div>
-
-
   </div>
+
 
   {{!-- <p>{{play_songs}}</p> --}}
 

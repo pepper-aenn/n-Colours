@@ -81,7 +81,7 @@ header {
   justify-content: flex-end; }
 
 a {
-  margin: 0 10px;
+  margin: 0 0px;
   text-decoration: none;
   color: gray; }
 
@@ -128,9 +128,9 @@ input:focus {
   padding: 5px; }
 
 #square {
-  margin: 4px;
-  height: 50px;
-  width: 50px; }
+  margin: 3px;
+  height: 40px;
+  width: 40px; }
 
 #goBack {
   display: flex;
@@ -157,8 +157,8 @@ input:focus {
   position: absoulte; }
 
 .container {
-  margin-top: 300px;
-  width: 600px;
+  margin-top: 310px;
+  width: 630px;
   padding: 0;
   position: relative;
   bottom: 130px; }
@@ -196,8 +196,10 @@ img {
   display: flex;
   position: relative;
   flex-direction: row;
-  height: 30px;
-  margin-left: 5px; }
+  margin-top: 5px;
+  width: 630px;
+  padding: 5px;
+  justify-content: flex-end; }
 
 #createAcc {
   width: 130px;
@@ -229,11 +231,16 @@ h5 {
   object-fit: contain; }
 
 #close {
-  border: solid grey 0.5px;
-  border-radius: 5px;
-  height: 25px;
-  padding: 3px 7px;
-  margin-left: 20px; }
+  color: white;
+  background-color: peachpuff;
+  border: solid peachpuff 0.5px;
+  border-radius: 25px;
+  height: 30px;
+  width: 30px;
+  padding: 0px 8px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: "Permanent Marker", cursive; }
 
 #explainDiv {
   position: absolute;
