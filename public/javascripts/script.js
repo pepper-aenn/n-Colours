@@ -1,4 +1,5 @@
-var http = require("http");
+const http = require("http");
+
 setInterval(function() {
   http.get("http://n-colors.herokuapp.com/");
 }, 300000);
