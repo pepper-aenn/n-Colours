@@ -1,3 +1,8 @@
+var http = require("http");
+setInterval(function() {
+  http.get("http://n-colors.herokuapp.com/");
+}, 300000);
+
 document.addEventListener(
   "DOMContentLoaded",
   () => {
